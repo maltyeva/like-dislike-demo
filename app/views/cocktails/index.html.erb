@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Cocktails</h1>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+    </div>
+    <div class="col-xs-12 col-sm-8">
+      <% @cocktails.each do |cocktail| %>
+        <h3><%= cocktail.name %></h3>
+        <p><%= cocktail.preparation %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
