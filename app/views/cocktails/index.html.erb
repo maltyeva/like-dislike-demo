@@ -8,6 +8,7 @@
       <% @cocktails.each do |cocktail| %>
         <h3><%= cocktail.name %></h3>
         <p><%= cocktail.preparation %></p>
+        <p><%= link_to "Like", toggle_favorite_cocktail_path(cocktail), remote: true, method: :post %></p>
       <% end %>
     </div>
   </div>
