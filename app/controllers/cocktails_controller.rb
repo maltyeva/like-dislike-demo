@@ -3,6 +3,7 @@ class CocktailsController < ApplicationController
 
   def index
     @cocktails = Cocktail.all
+    @favorite_cocktails = current_user.favorited_by_type('Cocktail')
   end
 
   def toggle_favorite

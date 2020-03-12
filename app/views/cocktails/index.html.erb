@@ -3,16 +3,25 @@
   <hr>
   <div class="row">
     <div class="col-xs-12 col-sm-6">
+      <% @cocktails.each do |cocktail| %>
+        <div class="d-flex">
+          <div>
+            <%= link_to toggle_favorite_cocktail_path(cocktail), remote: true, method: :post do %>
+              <%= render 'cocktails/like_button', cocktail: cocktail %>
+            <% end %>
+          </div>
+          <div>
+            <%= render 'cocktail', cocktail: cocktail %>
+          </div>
+        </div>
+      <% end %>
     </div>
     <div class="col-xs-12 col-sm-6">
-      <% @cocktails.each do |cocktail| %>
-        <div class="d-flex justify-content-between">
-          <h3><%= cocktail.name %></h3>
-          <%= link_to toggle_favorite_cocktail_path(cocktail), remote: true, method: :post do %>
-            <%= render 'cocktails/like_button', cocktail: cocktail %>
-          <% end %>
+      <h3>Liked Cocktails</h3>
+      <% @favorite_cocktails.each do |cocktail| %>
+        <div class="favorite-list">
+          <%= render 'cocktail', cocktail: cocktail %>
         </div>
-        <p><%= cocktail.preparation %></p>
       <% end %>
     </div>
   </div>
