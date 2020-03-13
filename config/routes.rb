@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'cocktails#index'
+  root 'static#home'
   devise_for :users
 
   resources :cocktails, only: :index do

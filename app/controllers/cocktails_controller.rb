@@ -1,6 +1,5 @@
 class CocktailsController < ApplicationController
-  before_action :authenticate_user!, only: :toggle_favorite
-
+  before_action :authenticate_user!
   def index
     @cocktails = Cocktail.all
     @favorite_cocktails = current_user.favorited_by_type('Cocktail')
