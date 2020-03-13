@@ -11,18 +11,19 @@
             <% end %>
           </div>
           <div>
-            <%= render 'cocktail', cocktail: cocktail %>
+            <h3><%= cocktail.name %></h3>
+            <p><%= cocktail.preparation %></p>
           </div>
         </div>
       <% end %>
     </div>
     <div class="col-xs-12 col-sm-6">
       <h3>Liked Cocktails</h3>
-      <% @favorite_cocktails.each do |cocktail| %>
-        <div class="favorite-list">
+      <div class="favorites">
+        <% @favorite_cocktails.each do |cocktail| %>
           <%= render 'cocktail', cocktail: cocktail %>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
